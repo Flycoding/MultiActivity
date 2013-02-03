@@ -15,7 +15,13 @@ public class MainActivity extends Activity {
 	}
 
 	public void startAnother(View view) {
-		startActivity(new Intent(getApplicationContext(), AnotherActivity.class));
+		// startActivity(new Intent(getApplicationContext(), AnotherActivity.class));
+		Intent intent = new Intent();
+		// intent.setClass(this, AnotherActivity.class);
+		// intent.setClassName(getApplicationContext(), "com.flyingh.multiactivity.AnotherActivity");
+		// intent.setComponent(new ComponentName(getApplicationContext(), AnotherActivity.class));
+		intent.setClassName("com.flyingh.multiactivity", "com.flyingh.multiactivity.AnotherActivity");
+		startActivity(intent);
 	}
 
 	@Override
