@@ -21,6 +21,8 @@ public class MainActivity extends Activity {
 		// intent.setClassName(getApplicationContext(), "com.flyingh.multiactivity.AnotherActivity");
 		// intent.setComponent(new ComponentName(getApplicationContext(), AnotherActivity.class));
 		intent.setClassName("com.flyingh.multiactivity", "com.flyingh.multiactivity.AnotherActivity");
+		intent.putExtra("name", "flyingh");
+		intent.putExtra("age", 25);
 		startActivity(intent);
 	}
 

@@ -2,8 +2,10 @@ package com.flyingh.multiactivity;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 import android.support.v4.app.NavUtils;
 
 public class AnotherActivity extends Activity {
@@ -12,6 +14,8 @@ public class AnotherActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_another);
+		Intent intent = getIntent();
+		Toast.makeText(this, intent.getStringExtra("name") + "--" + intent.getIntExtra("age", 0), Toast.LENGTH_LONG).show();
 		// Show the Up button in the action bar.
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
