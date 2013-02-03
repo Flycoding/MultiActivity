@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -24,11 +25,20 @@ public class MainActivity extends Activity {
 		intent.setClassName("com.flyingh.multiactivity", "com.flyingh.multiactivity.AnotherActivity");
 		// intent.putExtra("name", "flyingh");
 		// intent.putExtra("age", 25);
-		Bundle extras=new Bundle();
+		Bundle extras = new Bundle();
 		extras.putString("name", "haha");
 		extras.putInt("age", 22);
 		intent.putExtras(extras);
-		startActivity(intent);
+		// startActivity(intent);
+		startActivityForResult(intent, 1);
+	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode != 1 && resultCode != 0) {
+			return;
+		}
+		Toast.makeText(getApplicationContext(), data.getStringExtra("result"), Toast.LENGTH_LONG).show();
 	}
 
 	@Override

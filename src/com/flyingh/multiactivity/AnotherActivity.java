@@ -7,6 +7,7 @@ import android.support.v4.app.NavUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 public class AnotherActivity extends Activity {
@@ -22,6 +23,13 @@ public class AnotherActivity extends Activity {
 		Log.i(TAG, intent.getExtras().getString("name"));
 		// Show the Up button in the action bar.
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+	}
+
+	public void close(View view) {
+		Intent data = new Intent();
+		data.putExtra("result", "OK");
+		setResult(0, data);
+		finish();
 	}
 
 	@Override

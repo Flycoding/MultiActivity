@@ -7,5 +7,6 @@
     <string name="start">Start</string>
     <string name="title_activity_another">AnotherActivity</string>
     <string name="content">I\'m another activity</string>
+    <string name="close">Close</string>
 
 </resources>
